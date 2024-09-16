@@ -6,7 +6,7 @@ public interface ICompuertas
     
     public List<bool> entradas { get; set; }
     
-    public bool AgregarEntrada(string nombre, bool valor);
+    public void AgregarEntrada(string nombre, bool valor);
     public bool Calcular();
     
 }
