@@ -4,8 +4,8 @@ namespace ConsoleApp1;
 
 public class And: ICompuertas
 {
-    public string nombre;
-    private List<bool> entradas;
+    public string name { get; }
+    public List<bool> entradas { get; }
     private bool result;
 
     public void AgregarEntrada(string nombre, bool valor)
@@ -31,6 +31,6 @@ public class And: ICompuertas
 
     public And(string nombre)
     {
-        this.nombre = nombre;
+        this.name = nombre;
     }
 }

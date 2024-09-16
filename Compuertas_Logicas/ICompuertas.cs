@@ -2,9 +2,9 @@
 
 public interface ICompuertas
 {
-    public string name { get; set; }
+    public string name { get;}
     
-    public List<bool> entradas { get; set; }
+    public List<bool> entradas { get;}
     
     public void AgregarEntrada(string nombre, bool valor);
     public bool Calcular();
