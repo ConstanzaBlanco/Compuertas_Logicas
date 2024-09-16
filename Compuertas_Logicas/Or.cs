@@ -3,7 +3,7 @@ namespace ConsoleApp1;
 public class Or : ICompuertas
 {
     public string name { get;}
-    public List<bool> entradas { get;}
+    public List<bool> entradas = new List<bool>();
 
     public Or(string name)
     {

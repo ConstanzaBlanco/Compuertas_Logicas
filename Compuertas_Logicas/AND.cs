@@ -5,7 +5,8 @@ namespace ConsoleApp1;
 public class And: ICompuertas
 {
     public string name { get; }
-    public List<bool> entradas { get; }
+    public List<bool> entradas = new List<bool>();
+    
     private bool result;
 
     public void AgregarEntrada(string nombre, bool valor)

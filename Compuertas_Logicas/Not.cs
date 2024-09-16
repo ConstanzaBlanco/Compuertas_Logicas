@@ -3,7 +3,7 @@
 public class Not:ICompuertas
 {
     public string name { get; }
-    public List<bool> entradas { get; }
+    public List<bool> entradas = new List<bool>();
     public bool result;
     
 
@@ -24,13 +24,9 @@ public class Not:ICompuertas
         {
             if (entrada == false)
             {
-                result = true;
+                return true;
             }
-            else
-            {
-                result = false;
-            } 
         }
-        return result;
+        return false;
     }
 }
