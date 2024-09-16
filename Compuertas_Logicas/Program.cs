@@ -4,9 +4,59 @@ public class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("----------------------------------");
+        
         bool a = true;
         bool b = true;
         bool c = true;
+        
+        Console.WriteLine("Prueba NOT");
+        
+        //Inicia prueba Compuerta NOT
+        ICompuertas A = new Not("A");
+        A.AgregarEntrada("a", a);
+        bool Aneg = A.Calcular();
+        Console.WriteLine(Aneg);
+        ICompuertas B = new Not("B");
+        B.AgregarEntrada("b", b);
+        bool Bneg = B.Calcular();
+        Console.WriteLine(Bneg);
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("Prueba AND");
+        
+        //Inicia prueba Compuerta AND
+        ICompuertas ab__and= new And("Ab_and");
+        ab__and.AgregarEntrada("a",a);
+        ab__and.AgregarEntrada("b",b);
+        bool aband = ab__and.Calcular();
+        Console.WriteLine(aband);
+        ICompuertas abc__and = new And("Abc_and");
+        abc__and.AgregarEntrada("a",a);
+        abc__and.AgregarEntrada("b",b);
+        abc__and.AgregarEntrada("c",c);
+        bool abcand = abc__and.Calcular();
+        Console.WriteLine(abcand);
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("Prueba OR");
+        
+        //Inicia prueba Compuerta OR
+        ICompuertas ab__or= new And("Ab_or");
+        ab__or.AgregarEntrada("a",a);
+        ab__or.AgregarEntrada("b",b);
+        bool abor = ab__or.Calcular();
+        Console.WriteLine(abor);
+        ICompuertas abc__or = new And("Abc_and");
+        abc__or.AgregarEntrada("a",a);
+        abc__or.AgregarEntrada("b",b);
+        abc__or.AgregarEntrada("c",c);
+        bool abcor = abc__and.Calcular();
+        Console.WriteLine(abcor);
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("----------------------------------");
+
         //Inicia Garage
         ICompuertas Anegado = new Not("A negado");
         Anegado.AgregarEntrada("a", a);
@@ -38,8 +88,10 @@ public class Program
         And.AgregarEntrada("c",c);
         bool resultado = And.Calcular();
         
-        Console.WriteLine("ACA");
+        Console.WriteLine("Resultado GarageGate");
         Console.WriteLine(resultado);
-
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("----------------------------------");
     }
+    
 }
