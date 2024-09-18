@@ -3,27 +3,27 @@ namespace ConsoleApp1;
 public class Or : ICompuertas
 {
     public string name { get;}
-    public List<bool> entradas = new List<bool>();
+    public Dictionary<string,bool> nombreentradas = new Dictionary<string, bool>();
 
-    public Or(string name)
+    public void AgregarEntrada(string nombre, bool valor)
     {
-        this.name = name;
-    }
-
-    public void AgregarEntrada(string nombreentrada, bool valorentrada)
-    {
-        entradas.Add(valorentrada);
+        nombreentradas[nombre] = valor;
     }
 
     public bool Calcular()
     {
-        foreach (bool valor  in entradas)
+        foreach (var par in nombreentradas)
         {
-            if (valor == true)
+            if (par.Value == true)
             {
                 return true;
             }
         }
         return false;
+    }
+
+    public Or(string name)
+    {
+        this.name = name;
     }
 }

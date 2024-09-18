@@ -18,10 +18,6 @@ public class Not:ICompuertas
 
     public bool Calcular()
     {
-        if (entrada == false)
-        {
-            return true;
-        }
-        return false;
+        return !entrada;
     }
 }

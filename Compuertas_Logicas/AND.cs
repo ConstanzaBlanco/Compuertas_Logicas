@@ -5,29 +5,23 @@ namespace ConsoleApp1;
 public class And: ICompuertas
 {
     public string name { get; }
-    public List<bool> entradas = new List<bool>();
-    
-    private bool result;
+    public Dictionary<string,bool> nombreentradas = new Dictionary<string, bool>();
 
     public void AgregarEntrada(string nombre, bool valor)
     {
-        entradas.Add(valor);
+        nombreentradas[nombre] = valor;
     }
 
     public bool Calcular()
     {
-        foreach (bool entrada in entradas)
+        foreach (var par in nombreentradas)
         {
-            if (entrada == false)
+            if (par.Value == false)
             {
-                result = false;
-                return result;
+                return false;
             }
-            
         }
-
-        result = true;
-        return result;
+        return true;
     }
 
     public And(string nombre)
