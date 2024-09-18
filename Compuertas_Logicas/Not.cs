@@ -3,8 +3,7 @@
 public class Not:ICompuertas
 {
     public string name { get; }
-    public List<bool> entradas = new List<bool>();
-    public bool result;
+    public bool entrada;
     
 
     public Not(string nombre)
@@ -14,18 +13,14 @@ public class Not:ICompuertas
 
     public void AgregarEntrada(string nombre, bool valor)
     {
-        entradas.Clear();
-        entradas.Add(valor);
+        this.entrada = valor;
     }
 
     public bool Calcular()
     {
-        foreach (bool entrada in entradas)
+        if (entrada == false)
         {
-            if (entrada == false)
-            {
-                return true;
-            }
+            return true;
         }
         return false;
     }
